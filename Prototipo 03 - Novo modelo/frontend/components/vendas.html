@@ -1,0 +1,37 @@
+<div class="vendas dashboard">
+    <header class="nikname">
+      <div class="logo">
+        <a href="#" onclick="loadPage('homepage')">PCX Online</a>
+      </div>
+      <div class="user-info">
+        <p>Lucas Maia</p>
+        <p>11.222.333/0001-11</p>
+      </div>
+    </header>
+  
+    <section class="status">
+      <p><strong>Caixa:</strong> <span id="cash">R$ 10000,00</span></p>
+      <p><strong>Estoque:</strong> <span id="barrels">0</span> Barril</p>
+      <p><strong>Produção:</strong> <span id="energy">0</span> kW</p>
+      <p><strong>Preço do Barril:</strong> R$ <span id="barrelPrice">100.00</span></p>
+      <p><strong>Preço do kW:</strong> R$ <span id="energyPrice">100.00</span></p>
+    </section>
+  
+    <main class="container">
+      <h2>Vendas - Pedidos de Vendas</h2>
+      <section class="vendas-form">
+        <h3>Adicionar Novo Pedido de Venda</h3>
+        <input type="text" id="clienteVenda" placeholder="Nome do Cliente">
+        <input type="number" id="quantidadeVenda" placeholder="Quantidade (kW)">
+        <input type="number" id="precoVenda" placeholder="Preço (R$)">
+        <button onclick="adicionarVenda()">Adicionar Venda</button>
+        <button onclick="loadPage('homepage')">Voltar</button>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <p>© 2023 PCX Online. Todos os direitos reservados.</p>
+      <p>Desenvolvido por Lucas Maia</p>
+      <p>Versão Alfa 1.0</p>
+    </footer>
+  </div>

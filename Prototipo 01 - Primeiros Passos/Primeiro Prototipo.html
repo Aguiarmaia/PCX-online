@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCX Online</title>
+  <link rel="stylesheet" href="Pagina2 estilo.css">
+
+</head>
+<body>
+  <div class="sidebar"></div>
+  <div class="menu">
+    <button>Financeiro</button>
+    <button>Recursos Humanos</button>
+    <button>Produção</button>
+  </div>
+  
+  <div class="container">
+    <div class="content">
+      <h1>PCX Online</h1>
+      <label for="producao">Produção (quantidade):</label>
+      <input type="number" id="produção" placeholder="Ex: 100">
+
+      <label for="marketing">Investimento em Marketing (R$):</label>
+      <input type="number" id="marketing" placeholder="Ex: 5000">
+
+      <label for="contratacoes">Número de contratações:</label>
+      <input type="number" id="contratacoes" placeholder="Ex: 2">
+
+      <button class="submit" onclick="calcularTurno()">Finalizar Turno</button>
+
+      <div class="result" id="resultado"></div>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <div class="logo">PCX Online</div>
+      <a href="#">Home</a>
+      <a href="#">Relatórios</a>
+      <a href="#">Configurações</a>
+    </div>
+  </div>
+  
+  <main class="title">
+    <h1>Nome da empresa</h1> 
+    <p>CNPJ Da Empresa</p>
+    <p>Status da Empresa</p>
+  </main>
+
+  <footer class="footer"> 
+    <p>&copy; 2023 PCX Online. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Lucas Maia </p>
+    <p>Versão Alfa 1.0</p>
+  </footer>
+
+
+  <script>
+    function calcularTurno() {
+      const producao = parseInt(document.getElementById("producao").value) || 0;
+      const marketing = parseInt(document.getElementById("marketing").value) || 0;
+      const contratacoes = parseInt(document.getElementById("contratacoes").value) || 0;
+
+      const precoUnidade = 1000;
+      const vendas = Math.min(producao, Math.floor(80 + (marketing / 500)));
+      const receita = vendas * precoUnidade;
+      const custoProducao = producao * 500;
+      const custoRH = contratacoes * 2000;
+      const lucro = receita - (custoProducao + marketing + custoRH);
+
+      const resultado = `
+        <strong>Relatório do Turno 1</strong><br>
+        Unidades produzidas: ${producao}<br>
+        Unidades vendidas: ${vendas}<br>
+        Receita: R$ ${receita.toLocaleString()}<br>
+        Custos: R$ ${(custoProducao + marketing + custoRH).toLocaleString()}<br>
+        <strong>Lucro: R$ ${lucro.toLocaleString()}</strong>
+      `;
+
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>

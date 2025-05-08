@@ -1,0 +1,116 @@
+<div class="homepage dashboard">
+    <!-- Cabeçalho -->
+    <header class="nikname">
+      <div class="logo">PCX Online</div>
+      <div class="user-info">
+        <p>Lucas Maia</p>
+        <p>11.222.333/0001-11</p>
+      </div>
+    </header>
+  
+    <!-- Menu de Navegação -->
+    <nav class="sub-bar">
+      <ul class="menu">
+        <li>
+          <a href="#" onclick="loadPage('compras')">Compras</a>
+          <ul class="submenu">
+            <li><a href="#">Fornecedores</a></li>
+            <li><a href="#">Pedidos de Compras</a></li>
+            <li><a href="#">Relatório de Compras</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="loadPage('vendas')">Vendas</a>
+          <ul class="submenu">
+            <li><a href="#">Pedidos de Vendas</a></li>
+            <li><a href="#">Relatório de Venda</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="loadPage('financeiro')">Financeiro</a>
+          <ul class="submenu">
+            <li><a href="#" onclick="loadPage('financeiro')">Contas a Pagar</a></li>
+            <li><a href="#">Contas a Receber</a></li>
+            <li><a href="#">Fiscal</a></li>
+            <li><a href="#">Relatório Financeiro</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="loadPage('recursoshumanos')">Recursos Humanos</a>
+          <ul class="submenu">
+            <li><a href="#">Funcionários</a></li>
+            <li><a href="#">Relatório de RH</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="loadPage('producao-energia')">Produção</a>
+          <ul class="submenu">
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Máquinas</a></li>
+            <li><a href="#">Relatório de Produção</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="loadPage('estoque')">Estoque</a>
+          <ul class="submenu">
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Matéria Prima</a></li>
+            <li><a href="#">Produto Acabado</a></li>
+            <li><a href="#">Entradas e Saídas</a></li>
+            <li><a href="#">Relatório de Estoque</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Barra de Status -->
+    <section class="status">
+      <p><strong>Caixa:</strong> <span id="cash">R$ 10000,00</span></p>
+      <p><strong>Estoque:</strong> <span id="barrels">0</span> Barril</p>
+      <p><strong>Produção:</strong> <span id="energy">0</span> kW</p>
+      <p><strong>Preço do Barril:</strong> R$ <span id="barrelPrice">100.00</span></p>
+      <p><strong>Preço do kW:</strong> R$ <span id="energyPrice">100.00</span></p>
+    </section>
+  
+    <!-- Conteúdo Principal -->
+    <main class="container">
+      <section class="info">
+        <button onclick="openBuyBox()" aria-label="Abrir modal para comprar barril">Comprar Barril</button>
+        <button onclick="openSellBox()" aria-label="Vender energia">Vender Energia</button>
+      </section>
+    </main>
+  
+    <!-- Modal Compra de Barris -->
+    <div class="overlay-buy" id="overlay-buy">
+      <div class="modal-content">
+        <h2>Comprar Barris</h2>
+        <input type="number" id="barrelQuantity" placeholder="Quantidade">
+        <button onclick="buyBarrel()">Comprar</button>
+        <button onclick="closeBuyBox()">Cancelar</button>
+      </div>
+    </div>
+  
+    <!-- Modal Vender Energia -->
+    <div class="modal" id="overlay-sell">
+      <div class="modal-content">
+        <h2>Vender Energia</h2>
+        <input type="number" id="sellEnergyQuantity" placeholder="Quantidade (kW)">
+        <button onclick="sellEnergy()">Vender</button>
+        <button onclick="closeSellBox()">Cancelar</button>
+        <button onclick="selectMaxEnergy()">Selecionar Tudo</button>
+      </div>
+    </div>
+  
+    <!-- Seção de Notícias -->
+    <aside class="news">
+      <h2>Notícias</h2>
+      <p>O preço do petróleo está em alta!</p>
+    </aside>
+  
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>© 2023 PCX Online. Todos os direitos reservados.</p>
+      <p>Desenvolvido por Lucas Maia</p>
+      <p>Versão Alfa 1.1</p>
+    </footer>
+  </div>

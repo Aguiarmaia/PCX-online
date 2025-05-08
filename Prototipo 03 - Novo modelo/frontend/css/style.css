@@ -1,0 +1,449 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: #f4f4f4;
+  padding-top: 110px; /* Espaço para top-bar + sub-bar */
+}
+
+/* TOPO */
+.nikname {
+  width: 100%;
+  height: 60px;
+  background: #182131;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nikname .logo {
+  font-size: 25px;
+  text-decoration: none;
+  cursor: default;
+  color: #c19a44;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.user-info {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  
+}
+
+/* SUBMENU PRINCIPAL */
+.sub-bar {
+  background: #34495e;
+  height: 50px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu > li > a {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background 0.3s, border-radius 0.3s;
+}
+
+.menu > li > a:hover {
+  background: #c19a44;
+  border-radius: 5px;
+}
+
+/* SUBMENU FLUTUANTE */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #2c3e50;
+  padding: 10px 0;
+  border-radius: 10px;
+  min-width: 150px;
+  list-style: none;
+  z-index: 11;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  font-size: 12px;
+}
+
+.submenu li a:hover {
+  background: #c19a44;
+  border-radius: 5px;
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+/* BARRA DE STATUS */
+.status {
+  background: #18202f;
+  height: 40px;
+  position: static;
+  top: auto;
+  left: auto;
+  width: 100%;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px; /* Espaçamento interno */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+.status p {
+  color: #fff;
+  font-size: 13px;
+}
+
+/* NOTÍCIAS */
+.news {
+  width: 300px;
+  background: #34495e;
+  padding: 20px;
+  position: fixed;
+  top: 160px;
+  right: 20px;
+  border-radius: 15px;
+  z-index: 10;
+  color: #fff;
+}
+
+.news h2,
+.news h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news h3 {
+  margin-top: 20px;
+}
+
+.news p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+.container {
+  padding: 20px;
+  margin: 100px 20px 20px;
+  max-width: 400px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* BOTÕES */
+button {
+  padding: 12px;
+  background: #182131;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #c19a44;
+}
+
+.info button {
+  width: 190px;
+}
+
+/* MODAL BARRIS */
+#overlay-buy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+#overlay-buy.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 300px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.modal-content input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.modal-content input[type="number"]:focus {
+  border-color: #c19a44;
+  box-shadow: 0 0 8px rgba(193, 154, 68, 0.3);
+}
+
+.modal-content button {
+  background-color: #c19a44;
+  padding: 12px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.modal-content button:hover {
+  background-color: #a67c2a;
+}
+
+/* MODAL ENERGIA */
+#overlay-sell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+#overlay-sell.active {
+  display: flex;
+}
+
+/* RODAPÉ */
+.footer {
+  text-align: center;
+  background: #f4f4f4;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  body {
+    padding-top: 160px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .user-info {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .sub-bar {
+    top: 100px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .status {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .news {
+    position: static;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .container {
+    margin: 20px;
+  }
+
+  .info button {
+    width: 100%;
+  }
+}
+/*-----------------------------------------------------------*/
+/* FINANCEIRO */
+/*-----------------------------------------------------------*/
+
+
+.titulofinanceiro {
+  width: 100%;
+  height: 40px;
+  background: #3c5b92;
+  display: flex; /* Exibição flexível */
+  align-items: center; /* Alinhamento vertical */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 20px;
+  position: relative;
+  margin-top: -50px; /* Ajuste de margem superior */
+  left: 0;
+  z-index: 10; /* Camada superior */
+}
+
+.titulofinanceiro h2 {
+  font-size: 25px; /* Tamanho da fonte */
+  cursor: default; /* Cursor padrão */
+  color: white; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  text-align: center; /* Centraliza o texto */
+}
+  
+.saldocaixa {
+  width: 300px; /* Largura do elemento */
+  background: #2c3e50;
+  padding: 15px; /* Espaçamento interno */
+  position: fixed;
+  top: 110px; /* Distância do topo */
+  right: 20px;
+  display: flex; /* Espaçamento interno */
+  align-items: center; /* Espaçamento interno */
+  justify-content: center; /* Espaçamento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  z-index: 10; /* Camada superior */
+  color: #fff; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  text-align: center; /* Centraliza o texto */
+}
+
+.contas-pagar {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  position: fixed;
+  top: 160px;
+  left: 20px;
+  border-radius: 15px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+  max-height: 400px; /* Altura máxima visível */
+  overflow-y: auto;  /* Ativa rolagem vertical */
+}
+
+.lista-contas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.conta {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.conta p {
+  margin: 2px 0;
+}
+
+.conta button {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.conta button:hover {
+  background-color: #45a049;
+}
+
+.contas-receber {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  position: relative;
+  top: 20px;
+  left: 280px;
+  border-radius: 15px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+  max-height: 400px; /* Altura máxima visível */
+  overflow-y: auto;  /* Ativa rolagem vertical */
+}

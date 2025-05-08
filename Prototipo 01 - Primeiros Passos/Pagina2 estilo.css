@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  
+  .menu {  /* Menu lateral esquerdo*/
+    width: 180px;
+    background: #C19A44;
+    padding: 65px 0; /* Espaçamento superior para a barra superior */
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    height: 150vh;
+    position: fixed;
+    top: 10;
+    left:10 px;
+  }
+
+.top-bar { /* Barra lateral superior */
+    width: 100%; /* Largura total da barra superior */
+    height: 60px;  /* Altura da barra superior */
+    background: #182131; /* Cor de fundo da barra superior */
+    display: flex; /* Flexbox para alinhar os itens */
+    align-items: center; /* Alinhamento vertical dos itens na barra superior */
+    justify-content: space-between; /* Alinhamento dos itens na barra superior */
+    padding: 0 20px; /* Espaçamento interno */
+    position: fixed;   /* Fixa a barra no topo da página */
+    top: 0;       /* Distância do topo da página */
+    left: 0px;      /* Distância da esquerda da página */
+}
+
+        .top-bar .logo { /* Logo na barra superior */
+          font-size: 50px;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; /* Substitua pelo caminho da sua imagem */
+          color: #C19A44;
+        }   
+
+        .top-bar .menu-items { /* Itens do menu na barra superior */
+          display: flex;
+          gap: 20px;
+        }
+
+        .top-bar .menu-items a { /* Links do menu na barra superior */
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          padding: 5px 0px;
+          border-radius: 5px;
+        }
+
+        .top-bar .menu-items a:hover { /* Efeito de hover nos links do menu */
+          background: #C19A44;
+        }
+
+  .menu button { /* Botões do menu lateral esquerdo*/
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    background: #182131;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .menu button:hover {  /* Efeito de hover "passar o mouse por cima" nos botões do menu lateral esquerdo*/
+    background: #18202F;
+  }
+
+  .container { /* Container principal */
+    margin-left: 260px;
+    padding: 20px;
+    background: #f4f4f4;
+    flex: 1;
+  }
+
+  .content { /* Container de conteúdo */
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  h1 { text-align: center; } /* Título da página */
+  label { display: block; margin-top: 15px; font-weight: bold; }
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  button.submit { /* Botão de envio */
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: #182131;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button.submit:hover { background: #C19A44; } /* Efeito de hover "passar o mouse por cima" no botão de envio */
+  .result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f0fe;
+    border-radius: 8px;
+  }
